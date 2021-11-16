@@ -20,7 +20,7 @@ function cantidad(mes: number) {
     case 12:
       cantDias = 31;
       break;
-    // me suma los dos casos 28 y 29 me parece
+
     case 2:
       if (año % 4 === 0 && año % 100 !== 0) {
         cantDias = 29;
@@ -42,13 +42,12 @@ function cantidad(mes: number) {
 }
 
 function sumar() {
-  let meses: number = mes - 1;
-  let arreglo: number[] = new Array(12 - meses);
+  let arreglo: number[] = new Array(12);
   let cantidadTotal: number = 0;
-  let i: number = 0;
-  for (i = 0; i < arreglo.length; i++) {
-    arreglo[i] = cantidad(mes);
-    cantidadTotal = cantidadTotal + arreglo[i];
+  let meses: number = 0;
+  for (meses = 0; meses <= 12; meses++) {
+    arreglo[meses] = cantidad(mes);
+    cantidadTotal = cantidadTotal + arreglo[meses];
     mes++;
   }
   console.log(arreglo);
